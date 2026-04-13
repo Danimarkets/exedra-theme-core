@@ -1,0 +1,39 @@
+{%- if section.settings.text != blank -%}
+  <div class="announcement-bar section" style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }}; padding-block: 0.75rem;">
+    <div class="page-width u-text-center">
+      {{ section.settings.text }}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Bienvenido a Exedra Theme Core"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#02162f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
