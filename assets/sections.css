@@ -159,19 +159,103 @@
   opacity: 0.78;
 }
 
-.products-grid {
+.products-grid,
+.collection-grid {
   display: grid;
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
+.product-main__grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.product-main__media,
+.product-main__buybox {
+  padding: 1.25rem;
+}
+
+.product-main__gallery-main {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: rgba(2, 22, 47, 0.04);
+  border-radius: calc(var(--radius-base) * 0.9);
+}
+
+.product-main__gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-main__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.product-main__thumb {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: rgba(2, 22, 47, 0.04);
+  border-radius: calc(var(--radius-base) * 0.75);
+}
+
+.product-main__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-main__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  line-height: 0.95;
+}
+
+.product-main__price {
+  margin-top: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.product-main__description {
+  margin-top: 1rem;
+  opacity: 0.86;
+}
+
+.product-main__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.product-main__reviews,
+.product-main__details {
+  margin-top: 1.5rem;
+}
+
+.judgeme-slot {
+  padding: 1rem;
+  border: 1px dashed rgba(2, 22, 47, 0.18);
+  border-radius: calc(var(--radius-base) * 0.85);
+  background: rgba(255, 255, 255, 0.6);
+}
+
 @media (min-width: 768px) {
   .featured-grid,
-  .products-grid {
+  .products-grid,
+  .collection-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .image-with-text__grid {
+  .image-with-text__grid,
+  .product-main__grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 2rem;
   }
@@ -201,7 +285,8 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .products-grid {
+  .products-grid,
+  .collection-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

@@ -1,0 +1,4 @@
+{%- assign target = product_or_variant | default: product -%}
+{%- if target != blank -%}
+  <span class="price">{{ target.price | money }}</span>
+{%- endif -%}

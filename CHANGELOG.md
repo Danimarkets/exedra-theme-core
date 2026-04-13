@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.3] - 2026-04-13
+### Added
+- Collection grid foundation with reusable product card snippet
+- Product main section with gallery, buy box and structured content areas
+- Variant picker, accordion and review slot shells for PDP evolution
+
 ## [0.1.2] - 2026-04-13
 ### Added
 - Responsive header foundation with mobile toggle shell

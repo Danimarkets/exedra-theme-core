@@ -1,0 +1,14 @@
+{%- if product != blank and product.has_only_default_variant == false -%}
+  <div class="variant-picker">
+    {%- for option in product.options_with_values -%}
+      <div class="variant-picker__group">
+        <label class="variant-picker__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+        <select id="Option-{{ section.id }}-{{ forloop.index0 }}" class="variant-picker__select" name="options[{{ option.name | escape }}]">
+          {%- for value in option.values -%}
+            <option value="{{ value | escape }}">{{ value }}</option>
+          {%- endfor -%}
+        </select>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

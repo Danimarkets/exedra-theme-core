@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-main",
+      "blocks": {
+        "detail_1": {
+          "type": "detail",
+          "settings": {
+            "heading": "Beneficios",
+            "content": "<p>Bloque para comunicar valor central del producto.</p>"
+          }
+        },
+        "detail_2": {
+          "type": "detail",
+          "settings": {
+            "heading": "Información adicional",
+            "content": "<p>Bloque para composición, uso, talla o especificaciones.</p>"
+          }
+        },
+        "detail_3": {
+          "type": "detail",
+          "settings": {
+            "heading": "Envíos y cambios",
+            "content": "<p>Bloque para políticas comerciales y mensajes de confianza.</p>"
+          }
+        }
+      },
+      "block_order": ["detail_1", "detail_2", "detail_3"],
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

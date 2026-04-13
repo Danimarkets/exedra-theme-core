@@ -1,0 +1,86 @@
+<section class="section product-main">
+  <div class="page-width product-main__grid">
+    <div class="product-main__media card">
+      <div class="product-main__gallery-main">
+        {%- if product.featured_image != blank -%}
+          {{ product.featured_image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '600, 900, 1400', alt: product.title | escape }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      {%- if product.images.size > 1 -%}
+        <div class="product-main__thumbs">
+          {%- for image in product.images limit: 4 -%}
+            <div class="product-main__thumb">
+              {{ image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '120, 180, 300', alt: product.title | escape }}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-main__buybox card">
+      <h1 class="product-main__title">{{ product.title }}</h1>
+      <div class="product-main__price">{% render 'price', product_or_variant: product.selected_or_first_available_variant %}</div>
+
+      {%- if product.description != blank -%}
+        <div class="product-main__description rte">{{ product.description | strip_html | truncatewords: 40 }}</div>
+      {%- endif -%}
+
+      {% render 'variant-picker', product: product, section: section %}
+
+      <div class="product-main__actions">
+        <button type="button" class="button">Agregar al carrito</button>
+        <button type="button" class="button button--ghost">Comprar ahora</button>
+      </div>
+
+      <div class="product-main__reviews">
+        <div class="judgeme-slot">
+          Judge.me slot ready
+        </div>
+      </div>
+
+      <div class="product-main__details">
+        {% render 'accordion', blocks: section.blocks %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product main",
+  "blocks": [
+    {
+      "type": "detail",
+      "name": "Detail row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Detalles del producto"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Espacio para beneficios, composición, ingredientes, guía de uso o políticas.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Product main",
+      "blocks": [
+        {"type": "detail"},
+        {"type": "detail"},
+        {"type": "detail"}
+      ]
+    }
+  ]
+}
+{% endschema %}
