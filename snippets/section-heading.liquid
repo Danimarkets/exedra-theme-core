@@ -1,0 +1,10 @@
+{%- if title != blank or text != blank -%}
+  <div class="section-heading">
+    {%- if title != blank -%}
+      <h2 class="section-heading__title">{{ title }}</h2>
+    {%- endif -%}
+    {%- if text != blank -%}
+      <div class="section-heading__text rte">{{ text }}</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
