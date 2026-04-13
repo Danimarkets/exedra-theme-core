@@ -1,93 +1,59 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "eyebrow": "Exedra Theme Core",
-        "title": "Theme base modular para escalar ecommerce",
-        "text": "<p>Construido para marcas que necesitan una base seria, flexible y preparada para crecer.</p>"
-      }
-    },
+    "hero": {"type": "hero", "settings": {"eyebrow": "Exedra Theme Core", "title": "Theme base modular para escalar ecommerce", "text": "<p>Construido para marcas que necesitan una base seria, flexible y preparada para crecer.</p>"}},
     "trust_bar": {
       "type": "trust-bar",
       "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "heading": "Arquitectura limpia",
-            "text": "Pensado para múltiples clientes sin deuda técnica innecesaria."
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "heading": "Editor usable",
-            "text": "Configuración clara para operación diaria y personalización rápida."
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "heading": "Escalable",
-            "text": "Preparado para beauty, moda, tech y evolución B2B-ready."
-          }
-        }
+        "item_1": {"type": "item", "settings": {"heading": "Arquitectura limpia", "text": "Pensado para múltiples clientes sin deuda técnica innecesaria."}},
+        "item_2": {"type": "item", "settings": {"heading": "Editor usable", "text": "Configuración clara para operación diaria y personalización rápida."}},
+        "item_3": {"type": "item", "settings": {"heading": "Escalable", "text": "Preparado para beauty, moda, tech y evolución B2B-ready."}}
       },
       "block_order": ["item_1", "item_2", "item_3"],
-      "settings": {
-        "title": "Sistema base de agencia",
-        "text": "<p>Exedra Theme Core arranca como un núcleo reusable, no como un theme rígido.</p>"
-      }
+      "settings": {"title": "Sistema base de agencia", "text": "<p>Exedra Theme Core arranca como un núcleo reusable, no como un theme rígido.</p>"}
     },
-    "image_with_text": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "Storytelling modular listo para múltiples marcas",
-        "text": "<p>Beauty, moda, tech o retail visual: este bloque permite adaptar narrativa, producto y promesa sin romper el core.</p>"
-      }
+    "image_with_text": {"type": "image-with-text", "settings": {"heading": "Storytelling modular listo para múltiples marcas", "text": "<p>Beauty, moda, tech o retail visual: este bloque permite adaptar narrativa, producto y promesa sin romper el core.</p>"}},
+    "collections_editorial": {
+      "type": "featured-collections-editorial",
+      "blocks": {
+        "tile_1": {"type": "collection_tile", "settings": {"fallback_title": "Best sellers", "text": "Dirige tráfico a las líneas más fuertes o rentables."}},
+        "tile_2": {"type": "collection_tile", "settings": {"fallback_title": "Nuevos lanzamientos", "text": "Crea foco visual para campañas y novedades."}},
+        "tile_3": {"type": "collection_tile", "settings": {"fallback_title": "Colección editorial", "text": "Úsalo para storytelling y navegación intencional."}}
+      },
+      "block_order": ["tile_1", "tile_2", "tile_3"],
+      "settings": {"heading": "Colecciones destacadas", "text": "<p>Navegación comercial y editorial pensada para marcas visuales.</p>"}
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "Merchandising base",
-        "text": "<p>Un bloque para campañas, best sellers y colecciones destacadas.</p>",
-        "products_to_show": 4
-      }
-    },
+    "featured_collection": {"type": "featured-collection", "settings": {"heading": "Merchandising base", "text": "<p>Un bloque para campañas, best sellers y colecciones destacadas.</p>", "products_to_show": 4}},
     "featured_products": {
       "type": "featured-products",
       "blocks": {
-        "product_1": {
-          "type": "product",
-          "settings": {
-            "fallback_title": "Producto curado 1"
-          }
-        },
-        "product_2": {
-          "type": "product",
-          "settings": {
-            "fallback_title": "Producto curado 2"
-          }
-        },
-        "product_3": {
-          "type": "product",
-          "settings": {
-            "fallback_title": "Producto curado 3"
-          }
-        },
-        "product_4": {
-          "type": "product",
-          "settings": {
-            "fallback_title": "Producto curado 4"
-          }
-        }
+        "product_1": {"type": "product", "settings": {"fallback_title": "Producto curado 1"}},
+        "product_2": {"type": "product", "settings": {"fallback_title": "Producto curado 2"}},
+        "product_3": {"type": "product", "settings": {"fallback_title": "Producto curado 3"}},
+        "product_4": {"type": "product", "settings": {"fallback_title": "Producto curado 4"}}
       },
       "block_order": ["product_1", "product_2", "product_3", "product_4"],
-      "settings": {
-        "heading": "Selección curada",
-        "text": "<p>Base para lanzar picks manuales, campañas visuales y storytelling transaccional.</p>"
-      }
+      "settings": {"heading": "Selección curada", "text": "<p>Base para lanzar picks manuales, campañas visuales y storytelling transaccional.</p>"}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": {"type": "testimonial", "settings": {"quote": "La estructura se siente premium, clara y lista para crecer con la marca.", "author": "Cliente ejemplo"}},
+        "t2": {"type": "testimonial", "settings": {"quote": "La experiencia de compra se entiende rápido y comunica valor.", "author": "Comprador ejemplo"}},
+        "t3": {"type": "testimonial", "settings": {"quote": "Un core útil para distintos tipos de ecommerce sin sentirse genérico.", "author": "Caso de referencia"}}
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {"heading": "Prueba social", "text": "<p>Base reusable para testimonios, reseñas destacadas o credibilidad de marca.</p>"}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {"type": "question", "settings": {"heading": "¿Este core sirve para varias industrias?", "content": "<p>Sí. Está pensado primero para beauty, moda y ecommerce visual, pero su estructura admite adaptación progresiva a tech y B2B-ready.</p>"}},
+        "q2": {"type": "question", "settings": {"heading": "¿Necesita logo para funcionar bien?", "content": "<p>No. El sistema usa wordmark, tipografía y color como base, y el logo queda como opcional.</p>"}},
+        "q3": {"type": "question", "settings": {"heading": "¿Está listo para apps comunes?", "content": "<p>La base ya contempla convivencia con Judge.me, BSS B2B, Search & Filters, ManyChat y flujos por WhatsApp.</p>"}}
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {"heading": "Preguntas frecuentes", "text": "<p>Bloque para objeciones, claridad operativa y soporte a conversión.</p>"}
     }
   },
-  "order": ["hero", "trust_bar", "image_with_text", "featured_collection", "featured_products"]
+  "order": ["hero", "trust_bar", "image_with_text", "collections_editorial", "featured_collection", "featured_products", "testimonials", "faq"]
 }

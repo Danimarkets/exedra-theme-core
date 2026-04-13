@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.5] - 2026-04-13
+### Added
+- Featured collections editorial tiles section
+- Reusable testimonials and FAQ sections
+- Product main support for metafield-backed complementary content blocks
+
 ## [0.1.4] - 2026-04-13
 ### Added
 - Cart drawer shell with reusable cart line item snippet
