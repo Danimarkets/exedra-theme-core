@@ -38,7 +38,56 @@
         "title": "Sistema base de agencia",
         "text": "<p>Exedra Theme Core arranca como un núcleo reusable, no como un theme rígido.</p>"
       }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "Storytelling modular listo para múltiples marcas",
+        "text": "<p>Beauty, moda, tech o retail visual: este bloque permite adaptar narrativa, producto y promesa sin romper el core.</p>"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Merchandising base",
+        "text": "<p>Un bloque para campañas, best sellers y colecciones destacadas.</p>",
+        "products_to_show": 4
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "fallback_title": "Producto curado 1"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "fallback_title": "Producto curado 2"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "fallback_title": "Producto curado 3"
+          }
+        },
+        "product_4": {
+          "type": "product",
+          "settings": {
+            "fallback_title": "Producto curado 4"
+          }
+        }
+      },
+      "block_order": ["product_1", "product_2", "product_3", "product_4"],
+      "settings": {
+        "heading": "Selección curada",
+        "text": "<p>Base para lanzar picks manuales, campañas visuales y storytelling transaccional.</p>"
+      }
     }
   },
-  "order": ["hero", "trust_bar"]
+  "order": ["hero", "trust_bar", "image_with_text", "featured_collection", "featured_products"]
 }

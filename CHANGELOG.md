@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.2] - 2026-04-13
+### Added
+- Responsive header foundation with mobile toggle shell
+- Home sections for image with text, featured collection and featured products
+- Initial collection and product card styling for reusable merchandising blocks
+
 ## [0.1.1] - 2026-04-13
 ### Changed
 - Rebuilt foundation snapshot for consistency
