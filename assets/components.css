@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-base);
+  border: 1px solid transparent;
+  background: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.92;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-soft);
+}
+
+.section {
+  padding-block: clamp(2.5rem, 4vw, 5rem);
+}
+
+.site-header,
+.site-footer {
+  background: var(--color-secondary);
+  color: #ffffff;
+}
