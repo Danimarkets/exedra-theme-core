@@ -1,0 +1,68 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header__brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.site-header__brand-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-header__brand-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.announcement-bar {
+  font-size: 0.875rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(2, 22, 47, 0.96), rgba(2, 46, 29, 0.88));
+  color: #ffffff;
+}
+
+.hero__inner {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: clamp(4rem, 7vw, 8rem);
+}
+
+.hero__eyebrow {
+  font-size: 0.875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.hero__title {
+  margin: 0;
+  max-width: 12ch;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+}
+
+.hero__text {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  opacity: 0.88;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
