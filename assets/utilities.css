@@ -1,0 +1,31 @@
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-items-center {
+  align-items: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-gap-sm {
+  gap: calc(var(--spacing-base) * 0.5);
+}
+
+.u-gap-md {
+  gap: var(--spacing-base);
+}
+
+.u-gap-lg {
+  gap: calc(var(--spacing-base) * 1.5);
+}
