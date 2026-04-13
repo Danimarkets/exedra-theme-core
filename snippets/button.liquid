@@ -1,0 +1,9 @@
+{%- liquid
+  assign button_label = label | default: 'Shop now'
+  assign button_url = url | default: '#'
+  assign button_style = style | default: 'primary'
+-%}
+
+<a href="{{ button_url }}" class="button button--{{ button_style }}">
+  {{ button_label }}
+</a>
