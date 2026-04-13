@@ -1,0 +1,35 @@
+<header class="site-header section">
+  <div class="page-width u-flex u-items-center u-justify-between u-gap-md">
+    <a href="{{ routes.root_url }}" class="site-header__brand">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: width: 240 | image_tag: loading: 'eager', widths: '120, 180, 240', alt: shop.name }}
+      {%- else -%}
+        <strong>{{ shop.name }}</strong>
+      {%- endif -%}
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary navigation">
+      <ul class="u-flex u-gap-md" style="list-style: none; margin: 0; padding: 0;">
+        {%- for link in section.settings.menu.links -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}
