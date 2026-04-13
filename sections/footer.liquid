@@ -1,0 +1,29 @@
+<footer class="site-footer section">
+  <div class="page-width">
+    <div class="u-flex u-items-center u-justify-between u-gap-md" style="flex-wrap: wrap;">
+      <div>
+        <strong>{{ shop.name }}</strong>
+        <p style="margin: 0.5rem 0 0; opacity: 0.8;">{{ section.settings.copy_text }}</p>
+      </div>
+      <div style="opacity: 0.8;">
+        {{ 'now' | date: '%Y' }} © {{ shop.name }}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copy_text",
+      "label": "Copy text",
+      "default": "Exedra Theme Core — base modular para ecommerce"
+    }
+  ]
+}
+{% endschema %}
