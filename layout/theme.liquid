@@ -30,10 +30,25 @@
 
     {{ content_for_header }}
 
-    {{ 'tokens.css' | asset_url | stylesheet_tag }}
+    <style>
+      :root {
+        --color-primary: {{ settings.color_primary }};
+        --color-secondary: {{ settings.color_secondary }};
+        --color-surface: {{ settings.color_surface }};
+        --color-accent: {{ settings.color_accent }};
+        --radius-base: {{ settings.radius_base }}px;
+        --spacing-base: {{ settings.spacing_base }}px;
+        --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --container-max: 1440px;
+        --shadow-soft: 0 10px 30px rgba(2, 22, 47, 0.08);
+      }
+    </style>
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'utilities.css' | asset_url | stylesheet_tag }}
     {{ 'components.css' | asset_url | stylesheet_tag }}
+    {{ 'sections.css' | asset_url | stylesheet_tag }}
 
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
   </head>

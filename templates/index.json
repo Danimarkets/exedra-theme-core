@@ -1,10 +1,44 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {}
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Exedra Theme Core",
+        "title": "Theme base modular para escalar ecommerce",
+        "text": "<p>Construido para marcas que necesitan una base seria, flexible y preparada para crecer.</p>"
+      }
+    },
+    "trust_bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "heading": "Arquitectura limpia",
+            "text": "Pensado para múltiples clientes sin deuda técnica innecesaria."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "heading": "Editor usable",
+            "text": "Configuración clara para operación diaria y personalización rápida."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "heading": "Escalable",
+            "text": "Preparado para beauty, moda, tech y evolución B2B-ready."
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3"],
+      "settings": {
+        "title": "Sistema base de agencia",
+        "text": "<p>Exedra Theme Core arranca como un núcleo reusable, no como un theme rígido.</p>"
+      }
     }
   },
-  "order": ["main"]
+  "order": ["hero", "trust_bar"]
 }
