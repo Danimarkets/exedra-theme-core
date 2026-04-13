@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.4] - 2026-04-13
+### Added
+- Cart drawer shell with reusable cart line item snippet
+- Search template foundation with predictive-ready structure
+- WhatsApp conversion hook setting and operational messaging areas
+
 ## [0.1.3] - 2026-04-13
 ### Added
 - Collection grid foundation with reusable product card snippet

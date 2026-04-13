@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Exedra Theme Core",
-    "theme_version": "0.1.1",
+    "theme_version": "0.1.4",
     "theme_author": "Danimarkets / Exedra Core",
     "theme_documentation_url": "https://github.com/Danimarkets/exedra-theme-core",
     "theme_support_url": "https://github.com/Danimarkets/exedra-theme-core"
@@ -70,6 +70,23 @@
         "step": 2,
         "unit": "px",
         "default": 12
+      }
+    ]
+  },
+  {
+    "name": "Conversion",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_url",
+        "label": "WhatsApp URL",
+        "default": "https://wa.me/"
+      },
+      {
+        "type": "text",
+        "id": "cart_incentive_message",
+        "label": "Cart incentive message",
+        "default": "Envío rápido y soporte directo para cerrar la compra."
       }
     ]
   }

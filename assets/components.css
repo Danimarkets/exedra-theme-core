@@ -142,3 +142,33 @@
   padding: 0 0 1rem;
   opacity: 0.82;
 }
+
+.cart-line-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.875rem;
+}
+
+.cart-line-item__media {
+  aspect-ratio: 1;
+  background: rgba(2, 22, 47, 0.04);
+  border-radius: calc(var(--radius-base) * 0.75);
+  overflow: hidden;
+}
+
+.cart-line-item__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-line-item__title {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cart-line-item__meta {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  opacity: 0.76;
+}

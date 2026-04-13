@@ -1,0 +1,31 @@
+<section class="section search-page">
+  <div class="page-width">
+    <h1 class="section-heading__title">Búsqueda</h1>
+    <div class="section-heading__text rte"><p>Estructura base preparada para búsqueda, filtros y evolución hacia predictivo.</p></div>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-page__form">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Buscar productos, colecciones o contenido" class="search-page__input">
+      <button type="submit" class="button">Buscar</button>
+    </form>
+
+    <div class="search-page__results">
+      {%- if search.performed -%}
+        <p>{{ search.results_count }} resultados para “{{ search.terms }}”.</p>
+        <div class="collection-grid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', product: item %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main search",
+  "settings": []
+}
+{% endschema %}

@@ -2,7 +2,7 @@ document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');
 
 window.ExedraThemeCore = {
-  version: '0.1.3'
+  version: '0.1.4'
 };
 
 document.addEventListener('click', function (event) {
@@ -25,5 +25,18 @@ document.addEventListener('click', function (event) {
     const isOpen = accordionToggle.getAttribute('aria-expanded') === 'true';
     accordionToggle.setAttribute('aria-expanded', String(!isOpen));
     if (content) content.hidden = isOpen;
+  }
+
+  const drawerOpen = event.target.closest('[data-cart-drawer-open]');
+  if (drawerOpen) {
+    const targetId = drawerOpen.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
+    if (target) target.classList.add('is-open');
+  }
+
+  const drawerClose = event.target.closest('[data-cart-drawer-close]');
+  if (drawerClose) {
+    const drawer = drawerClose.closest('.cart-drawer');
+    if (drawer) drawer.classList.remove('is-open');
   }
 });

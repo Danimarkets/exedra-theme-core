@@ -22,6 +22,9 @@
         {%- if section.settings.show_search -%}
           <a href="{{ routes.search_url }}" class="site-header__search-link">Buscar</a>
         {%- endif -%}
+        {%- if section.settings.show_cart -%}
+          <button type="button" class="site-header__cart-toggle" aria-controls="CartDrawer" data-cart-drawer-open>Carrito</button>
+        {%- endif -%}
         <button type="button" class="site-header__mobile-toggle" aria-expanded="false" aria-controls="MobileNav-{{ section.id }}" data-mobile-nav-toggle>
           Menú
         </button>
@@ -56,6 +59,12 @@
       "type": "checkbox",
       "id": "show_search",
       "label": "Show search link",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "Show cart trigger",
       "default": true
     }
   ]

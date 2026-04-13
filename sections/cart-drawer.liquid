@@ -1,0 +1,43 @@
+<aside id="CartDrawer" class="cart-drawer" aria-label="Cart drawer">
+  <div class="cart-drawer__header">
+    <h2 style="margin: 0;">Tu carrito</h2>
+    <button type="button" class="cart-drawer__close" data-cart-drawer-close>Cerrar</button>
+  </div>
+
+  <div class="cart-drawer__body">
+    <div class="cart-drawer__items">
+      {%- if cart.item_count > 0 -%}
+        {%- for item in cart.items -%}
+          {% render 'cart-line-item', item: item %}
+        {%- endfor -%}
+      {%- else -%}
+        <div class="card" style="padding: 1rem;">Tu carrito está vacío.</div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="cart-drawer__footer">
+    <div class="cart-drawer__subtotal">
+      <span>Subtotal</span>
+      <span>{{ cart.total_price | money }}</span>
+    </div>
+
+    {%- if settings.cart_incentive_message != blank -%}
+      <div class="cart-drawer__message">{{ settings.cart_incentive_message }}</div>
+    {%- endif -%}
+
+    <div class="cart-drawer__actions">
+      <a href="{{ routes.cart_url }}" class="button">Ver carrito</a>
+      {%- if settings.whatsapp_url != blank -%}
+        <a href="{{ settings.whatsapp_url }}" class="button button--ghost">Hablar por WhatsApp</a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Cart drawer",
+    "settings": []
+  }
+  {% endschema %}
+</aside>
