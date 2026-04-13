@@ -1,0 +1,13 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "copy_text": "Exedra Theme Core — base modular para ecommerce"
+      }
+    }
+  },
+  "order": ["footer"]
+}
