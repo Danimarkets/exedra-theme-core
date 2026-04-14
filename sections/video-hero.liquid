@@ -1,0 +1,35 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section video-hero-section' %}>
+  <div class="page-width">
+    <div class="video-hero card motion-item">
+      <div class="video-hero__media">
+        {%- if section.settings.video_url != blank -%}
+          {{ section.settings.video_url | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '1200x' }}
+        {%- elsif section.settings.poster_image != blank -%}
+          {{ section.settings.poster_image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '600, 1200, 1800', alt: section.settings.heading | escape }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      <div class="video-hero__content">
+        {%- if section.settings.eyebrow != blank -%}<div class="hero__eyebrow">{{ section.settings.eyebrow }}</div>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="hero__title" style="max-width: 10ch;">{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.text != blank -%}<div class="hero__text rte">{{ section.settings.text }}</div>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video hero",
+  "settings": [
+    {"type":"video","id":"video_url","label":"Video"},
+    {"type":"image_picker","id":"poster_image","label":"Poster image"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Video hero"},
+    {"type":"text","id":"heading","label":"Heading","default":"Impacto visual con video"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Sección para campañas, branding o storytelling con alto peso visual.</p>"},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Video hero"}]
+}
+{% endschema %}

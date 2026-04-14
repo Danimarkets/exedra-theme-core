@@ -1,0 +1,40 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section lookbook-cards-section' %}>
+  <div class="page-width">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    <div class="image-gallery-grid">
+      {%- for block in section.blocks -%}
+        <article class="card motion-item image-gallery__item">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400, 800, 1200', alt: block.settings.title | escape }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <div class="image-gallery__caption">
+            <strong>{{ block.settings.title }}</strong>
+            {%- if block.settings.text != blank -%}<div style="margin-top:.5rem;">{{ block.settings.text }}</div>{%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lookbook cards",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Lookbook cards"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Ideal para cápsulas, outfits, escenas visuales o inspiraciones de compra.</p>"},
+    {% render 'motion-settings' %}
+  ],
+  "blocks": [
+    {"type":"card","name":"Lookbook card","settings":[
+      {"type":"image_picker","id":"image","label":"Image"},
+      {"type":"text","id":"title","label":"Title","default":"Lookbook card"},
+      {"type":"text","id":"text","label":"Support text","default":"Texto corto para acompañar la escena o el outfit."}
+    ]}
+  ],
+  "max_blocks": 8,
+  "presets": [{"name":"Lookbook cards","blocks":[{"type":"card"},{"type":"card"},{"type":"card"}]}]
+}
+{% endschema %}

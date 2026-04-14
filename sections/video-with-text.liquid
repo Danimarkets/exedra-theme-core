@@ -1,0 +1,32 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section video-with-text-section' %}>
+  <div class="page-width image-with-text__grid">
+    <div class="image-with-text__media card motion-item">
+      {%- if section.settings.video != blank -%}
+        {{ section.settings.video | video_tag: autoplay: false, loop: true, muted: true, controls: true, image_size: '1200x' }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    <div class="image-with-text__content motion-item">
+      {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <div style="margin-top:1.5rem;">{% render 'button', label: section.settings.button_label, url: section.settings.button_link, style: 'ghost' %}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video with text",
+  "settings": [
+    {"type":"video","id":"video","label":"Video"},
+    {"type":"text","id":"heading","label":"Heading","default":"Video con contexto editorial"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Combina demostración visual con argumento de venta o storytelling.</p>"},
+    {"type":"text","id":"button_label","label":"Button label","default":"Ver más"},
+    {"type":"url","id":"button_link","label":"Button link"},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Video with text"}]
+}
+{% endschema %}

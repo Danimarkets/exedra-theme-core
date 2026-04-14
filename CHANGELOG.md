@@ -2,6 +2,11 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.2.2] - 2026-04-13
+### Added
+- Slideshow, video hero, video with text, lookbook banner, lookbook cards and lookbook slider sections
+- Visual commerce layer for premium landing and storytelling use cases
+
 ## [0.2.1] - 2026-04-13
 ### Added
 - Featured product, related products, product tabs and product bundles shell
