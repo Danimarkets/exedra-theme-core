@@ -1,0 +1,26 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section rich-text-section' %}>
+  <div class="page-width">
+    <div class="card motion-item" style="padding: 2rem;">
+      {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <div style="margin-top: 1.5rem;">
+          {% render 'button', label: section.settings.button_label, url: section.settings.button_link, style: 'ghost' %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Bloque de texto enriquecido"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Usa esta sección para manifiestos de marca, explicaciones, storytelling o contenido editorial flexible.</p>"},
+    {"type":"text","id":"button_label","label":"Button label","default":"Conocer más"},
+    {"type":"url","id":"button_link","label":"Button link"},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Rich text"}]
+}
+{% endschema %}

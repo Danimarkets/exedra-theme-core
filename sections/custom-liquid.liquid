@@ -1,0 +1,18 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section custom-liquid-section' %}>
+  <div class="page-width">
+    <div class="card motion-item" style="padding: 1.5rem;">
+      {{ section.settings.custom_liquid }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings": [
+    {"type":"liquid","id":"custom_liquid","label":"Custom Liquid","default":"<div><strong>Custom Liquid block</strong><p>Úsalo para insertar contenido o lógica puntual dentro del theme.</p></div>"},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Custom liquid"}]
+}
+{% endschema %}

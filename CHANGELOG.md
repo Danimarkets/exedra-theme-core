@@ -2,6 +2,11 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.9] - 2026-04-13
+### Added
+- Rich text, multicolumn, custom content and custom liquid sections
+- Motion-ready rich content system foundation
+
 ## [0.1.8] - 2026-04-13
 ### Added
 - Motion settings extended to hero, image with text, featured collection, editorial collections and FAQ
