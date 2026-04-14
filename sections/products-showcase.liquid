@@ -1,0 +1,29 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section products-showcase-section' %}>
+  <div class="page-width">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    <div class="products-grid">
+      {%- for block in section.blocks -%}
+        <div class="motion-item">{% render 'product-card', product: block.settings.product, fallback_title: block.settings.fallback_title %}</div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Products showcase",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Products showcase"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Sección para curar productos manualmente por campaña, contenido o intención comercial.</p>"},
+    {% render 'motion-settings' %}
+  ],
+  "blocks": [
+    {"type":"product","name":"Product","settings":[
+      {"type":"product","id":"product","label":"Product"},
+      {"type":"text","id":"fallback_title","label":"Fallback title","default":"Producto curado"}
+    ]}
+  ],
+  "max_blocks": 8,
+  "presets": [{"name":"Products showcase","blocks":[{"type":"product"},{"type":"product"},{"type":"product"},{"type":"product"}]}]
+}
+{% endschema %}

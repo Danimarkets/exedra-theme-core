@@ -1,0 +1,29 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section related-products-section' %}>
+  <div class="page-width">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    <div class="products-grid">
+      {%- if recommendations.products_count > 0 -%}
+        {%- for product in recommendations.products limit: section.settings.products_to_show -%}
+          <div class="motion-item">{% render 'product-card', product: product %}</div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..section.settings.products_to_show) -%}
+          <div class="motion-item">{% render 'product-card', product: blank, fallback_title: 'Relacionado ' | append: i %}</div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"También te puede interesar"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Bloque base para productos complementarios o sugeridos.</p>"},
+    {"type":"range","id":"products_to_show","label":"Products to show","min":2,"max":8,"step":1,"default":4},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Related products"}]
+}
+{% endschema %}

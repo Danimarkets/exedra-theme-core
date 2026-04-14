@@ -1,0 +1,35 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section product-bundles-shell' %}>
+  <div class="page-width">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    <div class="collections-editorial-grid">
+      {%- for block in section.blocks -%}
+        <div class="card motion-item" style="padding: 1.25rem;">
+          <h3 style="margin-top:0;">{{ block.settings.title }}</h3>
+          <div class="rte">{{ block.settings.text }}</div>
+          <div style="margin-top:1rem;">{% render 'button', label: block.settings.button_label, url: block.settings.button_link, style: 'ghost' %}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product bundles shell",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Combínalo con"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Shell listo para bundles, rutinas, outfits o kits sin cerrar la arquitectura todavía.</p>"},
+    {% render 'motion-settings' %}
+  ],
+  "blocks": [
+    {"type":"bundle","name":"Bundle option","settings":[
+      {"type":"text","id":"title","label":"Title","default":"Kit recomendado"},
+      {"type":"richtext","id":"text","label":"Text","default":"<p>Describe el bundle, la rutina o la combinación recomendada.</p>"},
+      {"type":"text","id":"button_label","label":"Button label","default":"Ver bundle"},
+      {"type":"url","id":"button_link","label":"Button link"}
+    ]}
+  ],
+  "max_blocks": 4,
+  "presets": [{"name":"Product bundles shell","blocks":[{"type":"bundle"},{"type":"bundle"}]}]
+}
+{% endschema %}

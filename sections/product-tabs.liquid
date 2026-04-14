@@ -1,0 +1,25 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section product-tabs-section' %}>
+  <div class="page-width motion-item">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    {% render 'accordion', blocks: section.blocks %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product tabs",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Información del producto"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Base flexible para tabs de guía, detalles, cuidados, envíos o composición.</p>"},
+    {% render 'motion-settings' %}
+  ],
+  "blocks": [
+    {"type":"tab","name":"Tab","settings":[
+      {"type":"text","id":"heading","label":"Tab title","default":"Detalles"},
+      {"type":"richtext","id":"content","label":"Content","default":"<p>Contenido del tab.</p>"}
+    ]}
+  ],
+  "max_blocks": 6,
+  "presets": [{"name":"Product tabs","blocks":[{"type":"tab"},{"type":"tab"},{"type":"tab"}]}]
+}
+{% endschema %}

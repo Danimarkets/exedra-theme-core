@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.2.1] - 2026-04-13
+### Added
+- Featured product, related products, product tabs and product bundles shell
+- Collection showcase and products showcase sections
+- Merchandising expansion for home and PDP use cases
+
 ## [0.2.0] - 2026-04-13
 ### Added
 - Image comparison, image gallery, image with text overlay and highlight text with image sections
