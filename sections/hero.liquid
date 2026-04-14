@@ -1,22 +1,18 @@
-<section class="hero">
+<section {% render 'motion-attrs', section: section, class_name: 'hero' %}>
   <div class="page-width hero__inner">
     {%- if section.settings.eyebrow != blank -%}
-      <div class="hero__eyebrow">{{ section.settings.eyebrow }}</div>
+      <div class="hero__eyebrow motion-item">{{ section.settings.eyebrow }}</div>
     {%- endif -%}
-
     {%- if section.settings.title != blank -%}
-      <h1 class="hero__title">{{ section.settings.title }}</h1>
+      <h1 class="hero__title motion-item">{{ section.settings.title }}</h1>
     {%- endif -%}
-
     {%- if section.settings.text != blank -%}
-      <div class="hero__text rte">{{ section.settings.text }}</div>
+      <div class="hero__text rte motion-item">{{ section.settings.text }}</div>
     {%- endif -%}
-
-    <div class="hero__actions">
+    <div class="hero__actions motion-item">
       {%- if section.settings.primary_button_label != blank and section.settings.primary_button_link != blank -%}
         {% render 'button', label: section.settings.primary_button_label, url: section.settings.primary_button_link, style: 'primary' %}
       {%- endif -%}
-
       {%- if section.settings.secondary_button_label != blank and section.settings.secondary_button_link != blank -%}
         {% render 'button', label: section.settings.secondary_button_label, url: section.settings.secondary_button_link, style: 'secondary' %}
       {%- endif -%}
@@ -30,51 +26,15 @@
   "tag": "section",
   "class": "section-hero",
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Exedra Theme Core"
-    },
-    {
-      "type": "textarea",
-      "id": "title",
-      "label": "Title",
-      "default": "Theme base modular para escalar ecommerce"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>Construido para marcas de beauty, moda y ecommerce visual que necesitan una base flexible y seria.</p>"
-    },
-    {
-      "type": "text",
-      "id": "primary_button_label",
-      "label": "Primary button label",
-      "default": "Explorar"
-    },
-    {
-      "type": "url",
-      "id": "primary_button_link",
-      "label": "Primary button link"
-    },
-    {
-      "type": "text",
-      "id": "secondary_button_label",
-      "label": "Secondary button label",
-      "default": "Ver estructura"
-    },
-    {
-      "type": "url",
-      "id": "secondary_button_link",
-      "label": "Secondary button link"
-    }
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Exedra Theme Core"},
+    {"type":"textarea","id":"title","label":"Title","default":"Theme base modular para escalar ecommerce"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Construido para marcas de beauty, moda y ecommerce visual que necesitan una base flexible y seria.</p>"},
+    {"type":"text","id":"primary_button_label","label":"Primary button label","default":"Explorar"},
+    {"type":"url","id":"primary_button_link","label":"Primary button link"},
+    {"type":"text","id":"secondary_button_label","label":"Secondary button label","default":"Ver estructura"},
+    {"type":"url","id":"secondary_button_link","label":"Secondary button link"},
+    {% render 'motion-settings' %}
   ],
-  "presets": [
-    {
-      "name": "Hero"
-    }
-  ]
+  "presets": [{"name":"Hero"}]
 }
 {% endschema %}

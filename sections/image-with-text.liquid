@@ -1,14 +1,13 @@
-<section class="section image-with-text">
+<section {% render 'motion-attrs', section: section, class_name: 'section image-with-text' %}>
   <div class="page-width image-with-text__grid">
-    <div class="image-with-text__media card">
+    <div class="image-with-text__media card motion-item">
       {%- if section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400, 800, 1200', alt: section.settings.heading | escape }}
       {%- else -%}
         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
       {%- endif -%}
     </div>
-
-    <div class="image-with-text__content">
+    <div class="image-with-text__content motion-item">
       {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
       {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
         <div style="margin-top: 1.5rem;">
@@ -23,39 +22,13 @@
 {
   "name": "Image with text",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Bloque editorial reusable"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>Este módulo sirve para contar historia de marca, explicar propuestas de valor o construir contexto comercial.</p>"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label",
-      "default": "Conocer más"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    }
+    {"type":"image_picker","id":"image","label":"Image"},
+    {"type":"text","id":"heading","label":"Heading","default":"Bloque editorial reusable"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Este módulo sirve para contar historia de marca, explicar propuestas de valor o construir contexto comercial.</p>"},
+    {"type":"text","id":"button_label","label":"Button label","default":"Conocer más"},
+    {"type":"url","id":"button_link","label":"Button link"},
+    {% render 'motion-settings' %}
   ],
-  "presets": [
-    {
-      "name": "Image with text"
-    }
-  ]
+  "presets": [{"name":"Image with text"}]
 }
 {% endschema %}

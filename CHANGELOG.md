@@ -2,6 +2,11 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.8] - 2026-04-13
+### Added
+- Motion settings extended to hero, image with text, featured collection, editorial collections and FAQ
+- Broader card scroll animation support across the home and content system
+
 ## [0.1.7] - 2026-04-13
 ### Added
 - Motion System foundation with reusable CSS utilities
