@@ -1,0 +1,49 @@
+{
+  "type": "header",
+  "content": "Motion"
+},
+{
+  "type": "checkbox",
+  "id": "enable_motion",
+  "label": "Enable motion",
+  "default": false
+},
+{
+  "type": "select",
+  "id": "motion_preset",
+  "label": "Motion preset",
+  "default": "fade-up",
+  "options": [
+    {"value": "fade-up", "label": "Fade up"},
+    {"value": "fade-left", "label": "Fade left"},
+    {"value": "fade-right", "label": "Fade right"},
+    {"value": "scale-in", "label": "Scale in"}
+  ]
+},
+{
+  "type": "select",
+  "id": "motion_intensity",
+  "label": "Motion intensity",
+  "default": "medium",
+  "options": [
+    {"value": "subtle", "label": "Subtle"},
+    {"value": "medium", "label": "Medium"},
+    {"value": "bold", "label": "Bold"}
+  ]
+},
+{
+  "type": "checkbox",
+  "id": "motion_stagger",
+  "label": "Stagger cards",
+  "default": false
+},
+{
+  "type": "select",
+  "id": "motion_trigger",
+  "label": "Motion trigger",
+  "default": "viewport",
+  "options": [
+    {"value": "viewport", "label": "On viewport"},
+    {"value": "immediate", "label": "Immediate"}
+  ]
+}

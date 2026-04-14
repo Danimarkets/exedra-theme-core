@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.7] - 2026-04-13
+### Added
+- Motion System foundation with reusable CSS utilities
+- Viewport observer for section and card reveal
+- Motion settings and card scroll animation support in selected sections
+
 ## [0.1.6] - 2026-04-13
 ### Added
 - Sticky ATC bar shell

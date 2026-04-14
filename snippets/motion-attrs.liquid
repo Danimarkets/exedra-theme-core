@@ -1,0 +1,9 @@
+{%- if section.settings.enable_motion -%}
+  class="motion-enabled {{ class_name }}"
+  data-motion-preset="{{ section.settings.motion_preset }}"
+  data-motion-intensity="{{ section.settings.motion_intensity }}"
+  data-motion-trigger="{{ section.settings.motion_trigger }}"
+  data-stagger="{{ section.settings.motion_stagger }}"
+{%- elsif class_name != blank -%}
+  class="{{ class_name }}"
+{%- endif -%}

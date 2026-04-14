@@ -1,14 +1,11 @@
-<section class="section">
+<section {% render 'motion-attrs', section: section, class_name: 'section' %}>
   <div class="page-width">
     {% render 'section-heading', title: section.settings.title, text: section.settings.text %}
-
     <div class="u-flex u-gap-md" style="flex-wrap: wrap; margin-top: 1.5rem;">
       {%- for block in section.blocks -%}
-        <div class="card" style="padding: 1rem 1.25rem; min-width: 220px; flex: 1 1 220px;">
+        <div class="card motion-item" style="padding: 1rem 1.25rem; min-width: 220px; flex: 1 1 220px;">
           <strong>{{ block.settings.heading }}</strong>
-          {%- if block.settings.text != blank -%}
-            <p style="margin: 0.5rem 0 0; opacity: 0.8;">{{ block.settings.text }}</p>
-          {%- endif -%}
+          {%- if block.settings.text != blank -%}<p style="margin: 0.5rem 0 0; opacity: 0.8;">{{ block.settings.text }}</p>{%- endif -%}
         </div>
       {%- endfor -%}
     </div>
@@ -19,49 +16,12 @@
 {
   "name": "Trust bar",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Bloques de confianza"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>Este módulo será reutilizable para beneficios, promesas de marca y argumentos de conversión.</p>"
-    }
+    {"type":"text","id":"title","label":"Title","default":"Bloques de confianza"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Este módulo será reutilizable para beneficios, promesas de marca y argumentos de conversión.</p>"},
+    {% render 'motion-settings' %}
   ],
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Envío rápido"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Estructura preparada para comunicar valor con claridad."
-        }
-      ]
-    }
-  ],
+  "blocks": [{"type":"item","name":"Item","settings":[{"type":"text","id":"heading","label":"Heading","default":"Envío rápido"},{"type":"text","id":"text","label":"Text","default":"Estructura preparada para comunicar valor con claridad."}]}],
   "max_blocks": 4,
-  "presets": [
-    {
-      "name": "Trust bar",
-      "blocks": [
-        {"type": "item"},
-        {"type": "item"},
-        {"type": "item"}
-      ]
-    }
-  ]
+  "presets": [{"name":"Trust bar","blocks":[{"type":"item"},{"type":"item"},{"type":"item"}]}]
 }
 {% endschema %}
