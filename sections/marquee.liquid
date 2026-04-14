@@ -1,0 +1,10 @@
+<section class="marquee" style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }};">
+  <div class="marquee__track">
+    {%- for i in (1..8) -%}
+      <span>{{ section.settings.text | default: settings.marquee_text }}</span>
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{"name":"Marquee","settings":[{"type":"text","id":"text","label":"Text","default":"Envíos rápidos · Pagos flexibles · Soporte directo · Lanzamientos constantes"},{"type":"color","id":"background","label":"Background","default":"#ff5b04"},{"type":"color","id":"text_color","label":"Text color","default":"#ffffff"}],"presets":[{"name":"Marquee"}]}
+{% endschema %}

@@ -1,0 +1,14 @@
+{%- if request.page_type == 'product' -%}
+<aside id="StickyAtc" class="sticky-atc" aria-label="Sticky add to cart">
+  <div class="page-width sticky-atc__inner">
+    <div class="sticky-atc__meta">
+      <span class="sticky-atc__title">{{ product.title }}</span>
+      <span class="sticky-atc__price">{{ product.selected_or_first_available_variant.price | money }}</span>
+    </div>
+    <div class="sticky-atc__actions">
+      <button type="button" class="button">Agregar al carrito</button>
+    </div>
+  </div>
+  {% schema %}{"name":"Sticky ATC","settings":[]}{% endschema %}
+</aside>
+{%- endif -%}

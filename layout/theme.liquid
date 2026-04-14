@@ -6,64 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_primary }}">
     <link rel="canonical" href="{{ canonical_url }}">
-
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {%- endif -%}
-
-    <title>
-      {{ page_title }}
-      {%- if current_tags -%}
-        &ndash; tagged {{ current_tags | join: ', ' }}
-      {%- endif -%}
-      {%- if current_page != 1 -%}
-        &ndash; Page {{ current_page }}
-      {%- endif -%}
-      {%- unless page_title contains shop.name -%}
-        &ndash; {{ shop.name }}
-      {%- endunless -%}
-    </title>
-
-    {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
-    {%- endif -%}
-
+    {%- if settings.favicon != blank -%}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">{%- endif -%}
+    <title>{{ page_title }}{%- if current_tags -%} &ndash; tagged {{ current_tags | join: ', ' }}{%- endif -%}{%- if current_page != 1 -%} &ndash; Page {{ current_page }}{%- endif -%}{%- unless page_title contains shop.name -%} &ndash; {{ shop.name }}{%- endunless -%}</title>
+    {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
     {{ content_for_header }}
-
-    <style>
-      :root {
-        --color-primary: {{ settings.color_primary }};
-        --color-secondary: {{ settings.color_secondary }};
-        --color-surface: {{ settings.color_surface }};
-        --color-accent: {{ settings.color_accent }};
-        --radius-base: {{ settings.radius_base }}px;
-        --spacing-base: {{ settings.spacing_base }}px;
-        --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        --container-max: 1440px;
-        --shadow-soft: 0 10px 30px rgba(2, 22, 47, 0.08);
-      }
-    </style>
-
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'utilities.css' | asset_url | stylesheet_tag }}
-    {{ 'components.css' | asset_url | stylesheet_tag }}
-    {{ 'sections.css' | asset_url | stylesheet_tag }}
-
+    <style>:root{--color-primary:{{ settings.color_primary }};--color-secondary:{{ settings.color_secondary }};--color-surface:{{ settings.color_surface }};--color-accent:{{ settings.color_accent }};--radius-base:{{ settings.radius_base }}px;--spacing-base:{{ settings.spacing_base }}px;--font-body:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-heading:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--container-max:1440px;--shadow-soft:0 10px 30px rgba(2,22,47,.08)}</style>
+    {{ 'base.css' | asset_url | stylesheet_tag }}{{ 'utilities.css' | asset_url | stylesheet_tag }}{{ 'components.css' | asset_url | stylesheet_tag }}{{ 'sections.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
   </head>
-
   <body class="template-{{ template.name | handle }}">
-    <a class="skip-to-content-link visually-hidden" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
-
+    <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
     {% sections 'header-group' %}
-
-    <main id="MainContent" class="main-content" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
-
+    {% section 'search-drawer' %}
+    {% section 'promo-popup' %}
+    {% section 'sticky-atc' %}
+    <main id="MainContent" class="main-content" role="main" tabindex="-1">{{ content_for_layout }}</main>
     {% section 'cart-drawer' %}
     {% sections 'footer-group' %}
   </body>

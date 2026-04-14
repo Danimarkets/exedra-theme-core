@@ -1,0 +1,16 @@
+<aside id="PromoPopup" class="promo-popup" aria-label="Promotional popup">
+  <div class="promo-popup__header">
+    <h3 style="margin:0;">{{ settings.popup_heading }}</h3>
+    <button type="button" class="promo-popup__close" data-popup-close>Cerrar</button>
+  </div>
+  <div class="promo-popup__body">
+    <div class="promo-popup__card">
+      <div class="rte">{{ settings.popup_text }}</div>
+      <div style="margin-top:1rem; display:grid; gap:.75rem;">
+        <input type="email" class="search-drawer__input" placeholder="Tu correo electrónico">
+        <button type="button" class="button">Quiero recibir novedades</button>
+      </div>
+    </div>
+  </div>
+  {% schema %}{"name":"Promo popup","settings":[]}{% endschema %}
+</aside>

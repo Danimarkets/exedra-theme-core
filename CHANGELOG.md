@@ -2,6 +2,14 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.1.6] - 2026-04-13
+### Added
+- Sticky ATC bar shell
+- Search drawer and predictive-search-ready placeholder
+- Promo popup shell
+- Marquee promotional section
+- Pickup availability shell
+
 ## [0.1.5] - 2026-04-13
 ### Added
 - Featured collections editorial tiles section

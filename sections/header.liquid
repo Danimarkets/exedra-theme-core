@@ -3,70 +3,23 @@
     <div class="site-header__row u-flex u-items-center u-justify-between u-gap-md">
       <a href="{{ routes.root_url }}" class="site-header__brand">
         <span class="site-header__brand-name">{{ settings.brand_name | default: shop.name }}</span>
-        {%- if settings.brand_tagline != blank -%}
-          <span class="site-header__brand-tagline">{{ settings.brand_tagline }}</span>
-        {%- endif -%}
+        {%- if settings.brand_tagline != blank -%}<span class="site-header__brand-tagline">{{ settings.brand_tagline }}</span>{%- endif -%}
       </a>
-
       <nav class="site-header__desktop-nav" aria-label="Primary navigation">
-        <ul class="site-header__desktop-nav-list">
-          {%- if section.settings.menu != blank -%}
-            {%- for link in section.settings.menu.links -%}
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {%- endfor -%}
-          {%- endif -%}
-        </ul>
+        <ul class="site-header__desktop-nav-list">{%- if section.settings.menu != blank -%}{%- for link in section.settings.menu.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}{%- endif -%}</ul>
       </nav>
-
       <div class="site-header__actions">
-        {%- if section.settings.show_search -%}
-          <a href="{{ routes.search_url }}" class="site-header__search-link">Buscar</a>
-        {%- endif -%}
-        {%- if section.settings.show_cart -%}
-          <button type="button" class="site-header__cart-toggle" aria-controls="CartDrawer" data-cart-drawer-open>Carrito</button>
-        {%- endif -%}
-        <button type="button" class="site-header__mobile-toggle" aria-expanded="false" aria-controls="MobileNav-{{ section.id }}" data-mobile-nav-toggle>
-          Menú
-        </button>
+        {%- if section.settings.show_search -%}<button type="button" class="site-header__search-link" aria-controls="SearchDrawer" data-search-drawer-open>Buscar</button>{%- endif -%}
+        {%- if section.settings.show_cart -%}<button type="button" class="site-header__cart-toggle" aria-controls="CartDrawer" data-cart-drawer-open>Carrito</button>{%- endif -%}
+        <button type="button" class="site-header__mobile-toggle" aria-expanded="false" aria-controls="MobileNav-{{ section.id }}" data-mobile-nav-toggle>Menú</button>
       </div>
     </div>
-
     <nav id="MobileNav-{{ section.id }}" class="site-header__mobile-nav" aria-label="Mobile navigation" hidden>
-      <ul class="site-header__mobile-nav-list">
-        {%- if section.settings.menu != blank -%}
-          {%- for link in section.settings.menu.links -%}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {%- endfor -%}
-        {%- endif -%}
-      </ul>
+      <ul class="site-header__mobile-nav-list">{%- if section.settings.menu != blank -%}{%- for link in section.settings.menu.links -%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%- endfor -%}{%- endif -%}</ul>
     </nav>
   </div>
 </header>
 
 {% schema %}
-{
-  "name": "Header",
-  "tag": "section",
-  "class": "section-header",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu",
-      "default": "main-menu"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_search",
-      "label": "Show search link",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_cart",
-      "label": "Show cart trigger",
-      "default": true
-    }
-  ]
-}
+{"name":"Header","tag":"section","class":"section-header","settings":[{"type":"link_list","id":"menu","label":"Menu","default":"main-menu"},{"type":"checkbox","id":"show_search","label":"Show search link","default":true},{"type":"checkbox","id":"show_cart","label":"Show cart trigger","default":true}]}
 {% endschema %}

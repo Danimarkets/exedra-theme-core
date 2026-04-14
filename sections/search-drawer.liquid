@@ -1,0 +1,20 @@
+<aside id="SearchDrawer" class="search-drawer" aria-label="Search drawer">
+  <div class="search-drawer__header">
+    <h2 style="margin:0;">Buscar</h2>
+    <button type="button" class="search-drawer__close" data-search-drawer-close>Cerrar</button>
+  </div>
+  <div class="search-drawer__body">
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-drawer__form">
+      <input type="search" name="q" placeholder="Buscar productos, colecciones o contenido" class="search-drawer__input">
+      <button type="submit" class="button">Buscar</button>
+    </form>
+    <div class="search-drawer__results">
+      <div class="predictive-search-placeholder">
+        <div class="predictive-search-placeholder__item">Predictive search shell</div>
+        <div class="predictive-search-placeholder__item">Productos sugeridos</div>
+        <div class="predictive-search-placeholder__item">Colecciones sugeridas</div>
+      </div>
+    </div>
+  </div>
+  {% schema %}{"name":"Search drawer","settings":[]}{% endschema %}
+</aside>
