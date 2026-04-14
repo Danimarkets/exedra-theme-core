@@ -2,6 +2,11 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.2.0] - 2026-04-13
+### Added
+- Image comparison, image gallery, image with text overlay and highlight text with image sections
+- Rich content visual layer to support more premium editorial implementations
+
 ## [0.1.9] - 2026-04-13
 ### Added
 - Rich text, multicolumn, custom content and custom liquid sections

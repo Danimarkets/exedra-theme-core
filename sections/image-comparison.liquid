@@ -1,0 +1,42 @@
+<section {% render 'motion-attrs', section: section, class_name: 'section image-comparison-section' %}>
+  <div class="page-width">
+    {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
+    <div class="card motion-item" style="padding: 1rem; margin-top: 1.5rem;">
+      <div class="image-comparison">
+        <div class="image-comparison__media image-comparison__media--before">
+          {%- if section.settings.before_image != blank -%}
+            {{ section.settings.before_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1400', alt: 'Before image' }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <span class="image-comparison__label">{{ section.settings.before_label }}</span>
+        </div>
+        <div class="image-comparison__divider"></div>
+        <div class="image-comparison__media image-comparison__media--after">
+          {%- if section.settings.after_image != blank -%}
+            {{ section.settings.after_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1400', alt: 'After image' }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <span class="image-comparison__label">{{ section.settings.after_label }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image comparison",
+  "settings": [
+    {"type":"text","id":"heading","label":"Heading","default":"Comparador visual"},
+    {"type":"richtext","id":"text","label":"Text","default":"<p>Úsalo para antes y después, contraste de producto, acabados o transformación visual.</p>"},
+    {"type":"image_picker","id":"before_image","label":"Before image"},
+    {"type":"text","id":"before_label","label":"Before label","default":"Antes"},
+    {"type":"image_picker","id":"after_image","label":"After image"},
+    {"type":"text","id":"after_label","label":"After label","default":"Después"},
+    {% render 'motion-settings' %}
+  ],
+  "presets": [{"name":"Image comparison"}]
+}
+{% endschema %}
