@@ -1,0 +1,12 @@
+{%- if heading != blank or text != blank or eyebrow != blank -%}
+  <div class="image-overlay-card__content {{ class_name }}">
+    {%- if eyebrow != blank -%}<div class="hero__eyebrow">{{ eyebrow }}</div>{%- endif -%}
+    {%- if heading != blank -%}<h2 class="hero__title" style="max-width: 10ch;">{{ heading }}</h2>{%- endif -%}
+    {%- if text != blank -%}<div class="hero__text rte">{{ text }}</div>{%- endif -%}
+    {%- if primary_label != blank or secondary_label != blank -%}
+      <div style="margin-top: 1.25rem;">
+        {% render 'button-group', primary_label: primary_label, primary_url: primary_url, primary_style: primary_style, secondary_label: secondary_label, secondary_url: secondary_url, secondary_style: secondary_style %}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
