@@ -1,0 +1,7 @@
+<div class="{{ wrapper_class }}">
+  {%- if image != blank -%}
+    {{ image | image_url: width: image_width | default: 1400 | image_tag: loading: loading | default: 'lazy', widths: widths | default: '400, 800, 1400', alt: alt | escape }}
+  {%- elsif placeholder != blank -%}
+    {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+</div>
