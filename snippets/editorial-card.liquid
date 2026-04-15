@@ -1,0 +1,13 @@
+{%- liquid
+  assign card_title = title | default: 'Editorial card'
+  assign card_text = text
+  assign card_url = url | default: '#'
+  assign card_class = class_name | default: ''
+-%}
+
+<a href="{{ card_url }}" class="collection-tile card {{ card_class }}">
+  <h3 class="collection-tile__title">{{ card_title }}</h3>
+  {%- if card_text != blank -%}
+    <p class="collection-tile__text">{{ card_text }}</p>
+  {%- endif -%}
+</a>
