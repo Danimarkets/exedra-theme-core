@@ -1,0 +1,10 @@
+{%- if primary_label != blank or secondary_label != blank -%}
+  <div class="hero__actions">
+    {%- if primary_label != blank and primary_url != blank -%}
+      {% render 'button', label: primary_label, url: primary_url, style: primary_style | default: 'primary' %}
+    {%- endif -%}
+    {%- if secondary_label != blank and secondary_url != blank -%}
+      {% render 'button', label: secondary_label, url: secondary_url, style: secondary_style | default: 'ghost' %}
+    {%- endif -%}
+  </div>
+{%- endif -%}
