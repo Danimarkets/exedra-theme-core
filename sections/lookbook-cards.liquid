@@ -4,11 +4,7 @@
     <div class="image-gallery-grid">
       {%- for block in section.blocks -%}
         <article class="card motion-item image-gallery__item">
-          {%- if block.settings.image != blank -%}
-            {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400, 800, 1200', alt: block.settings.title | escape }}
-          {%- else -%}
-            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          {%- endif -%}
+          {% render 'media-frame', image: block.settings.image, wrapper_class: '', image_width: 1200, widths: '400, 800, 1200', alt: block.settings.title, placeholder: 'image' %}
           <div class="image-gallery__caption">
             <strong>{{ block.settings.title }}</strong>
             {%- if block.settings.text != blank -%}<div style="margin-top:.5rem;">{{ block.settings.text }}</div>{%- endif -%}
@@ -31,7 +27,7 @@
     {"type":"card","name":"Lookbook card","settings":[
       {"type":"image_picker","id":"image","label":"Image"},
       {"type":"text","id":"title","label":"Title","default":"Lookbook card"},
-      {"type":"text","id":"text","label":"Support text","default":"Texto corto para acompañar la escena o el outfit."}
+      {"type":"text","id":"text","label":"Text","default":"Texto corto para acompañar la escena o el outfit."}
     ]}
   ],
   "max_blocks": 8,
