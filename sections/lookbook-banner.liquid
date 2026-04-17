@@ -1,20 +1,14 @@
 <section {% render 'motion-attrs', section: section, class_name: 'section lookbook-banner-section' %}>
   <div class="page-width">
     <div class="image-overlay-card motion-item">
-      <div class="image-overlay-card__media">
-        {%- if section.settings.image != blank -%}
-          {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '600, 1200, 1800', alt: section.settings.heading | escape }}
-        {%- else -%}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        {%- endif -%}
-      </div>
-      <div class="image-overlay-card__content">
-        {%- if section.settings.heading != blank -%}<h2 class="hero__title" style="max-width: 9ch;">{{ section.settings.heading }}</h2>{%- endif -%}
-        {%- if section.settings.text != blank -%}<div class="hero__text rte">{{ section.settings.text }}</div>{%- endif -%}
-        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-          <div style="margin-top:1rem;">{% render 'button', label: section.settings.button_label, url: section.settings.button_link, style: 'secondary' %}</div>
-        {%- endif -%}
-      </div>
+      {% render 'media-frame', image: section.settings.image, wrapper_class: 'image-overlay-card__media', image_width: 1800, widths: '600, 1200, 1800', alt: section.settings.heading, placeholder: 'image' %}
+      {% render 'overlay-content',
+        heading: section.settings.heading,
+        text: section.settings.text,
+        primary_label: section.settings.button_label,
+        primary_url: section.settings.button_link,
+        primary_style: 'secondary'
+      %}
     </div>
   </div>
 </section>
