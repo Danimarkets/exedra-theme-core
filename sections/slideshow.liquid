@@ -3,21 +3,16 @@
     <div class="slideshow card motion-item">
       {%- for block in section.blocks -%}
         <article class="slideshow__slide">
-          <div class="slideshow__media">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '600, 1200, 1800', alt: block.settings.heading | escape }}
-            {%- else -%}
-              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
-          </div>
-          <div class="slideshow__content">
-            {%- if block.settings.eyebrow != blank -%}<div class="hero__eyebrow">{{ block.settings.eyebrow }}</div>{%- endif -%}
-            {%- if block.settings.heading != blank -%}<h2 class="hero__title" style="max-width: 10ch;">{{ block.settings.heading }}</h2>{%- endif -%}
-            {%- if block.settings.text != blank -%}<div class="hero__text rte">{{ block.settings.text }}</div>{%- endif -%}
-            {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
-              <div style="margin-top:1rem;">{% render 'button', label: block.settings.button_label, url: block.settings.button_link, style: 'secondary' %}</div>
-            {%- endif -%}
-          </div>
+          {% render 'media-frame', image: block.settings.image, wrapper_class: 'slideshow__media', image_width: 1800, widths: '600, 1200, 1800', alt: block.settings.heading, placeholder: 'image' %}
+          {% render 'overlay-content',
+            class_name: 'slideshow__content',
+            eyebrow: block.settings.eyebrow,
+            heading: block.settings.heading,
+            text: block.settings.text,
+            primary_label: block.settings.button_label,
+            primary_url: block.settings.button_link,
+            primary_style: 'secondary'
+          %}
         </article>
       {%- endfor -%}
     </div>
