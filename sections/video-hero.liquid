@@ -4,17 +4,11 @@
       <div class="video-hero__media">
         {%- if section.settings.video_url != blank -%}
           {{ section.settings.video_url | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '1200x' }}
-        {%- elsif section.settings.poster_image != blank -%}
-          {{ section.settings.poster_image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '600, 1200, 1800', alt: section.settings.heading | escape }}
         {%- else -%}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% render 'media-frame', image: section.settings.poster_image, wrapper_class: '', image_width: 1800, widths: '600, 1200, 1800', alt: section.settings.heading, placeholder: 'image' %}
         {%- endif -%}
       </div>
-      <div class="video-hero__content">
-        {%- if section.settings.eyebrow != blank -%}<div class="hero__eyebrow">{{ section.settings.eyebrow }}</div>{%- endif -%}
-        {%- if section.settings.heading != blank -%}<h2 class="hero__title" style="max-width: 10ch;">{{ section.settings.heading }}</h2>{%- endif -%}
-        {%- if section.settings.text != blank -%}<div class="hero__text rte">{{ section.settings.text }}</div>{%- endif -%}
-      </div>
+      {% render 'overlay-content', class_name: 'video-hero__content', eyebrow: section.settings.eyebrow, heading: section.settings.heading, text: section.settings.text %}
     </div>
   </div>
 </section>
