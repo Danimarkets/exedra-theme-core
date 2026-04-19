@@ -2,6 +2,12 @@
 
 All notable changes to **Exedra Theme Core** will be documented in this file.
 
+## [0.2.3] - 2026-04-15
+### Changed
+- Reused shared snippets across editorial, overlay, video and starter-pack sections
+- Reduced duplicated markup in core home modules and improved CTA consistency
+- Continued hardening of the starter pack before pilot installation
+
 ## [0.2.2] - 2026-04-13
 ### Added
 - Slideshow, video hero, video with text, lookbook banner, lookbook cards and lookbook slider sections
