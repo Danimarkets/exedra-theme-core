@@ -3,7 +3,7 @@
     <div class="u-flex u-items-center u-justify-between u-gap-md" style="flex-wrap: wrap;">
       <div>
         <strong>{{ settings.brand_name | default: shop.name }}</strong>
-        <p style="margin: 0.5rem 0 0; opacity: 0.8;">{{ section.settings.copy_text }}</p>
+        <p style="margin: 0.5rem 0 0; opacity: 0.8;">{{ section.settings.text }}</p>
       </div>
       <div style="opacity: 0.8;">
         {{ 'now' | date: '%Y' }} © {{ settings.brand_name | default: shop.name }}
@@ -20,8 +20,8 @@
   "settings": [
     {
       "type": "text",
-      "id": "copy_text",
-      "label": "Copy text",
+      "id": "text",
+      "label": "Text",
       "default": "Exedra Theme Core — base modular para ecommerce"
     }
   ]
