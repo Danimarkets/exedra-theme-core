@@ -2,11 +2,9 @@
   <div class="page-width">
     <div class="card motion-item" style="padding: 2rem;">
       {% render 'section-heading', title: section.settings.heading, text: section.settings.text %}
-      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-        <div style="margin-top: 1.5rem;">
-          {% render 'button', label: section.settings.button_label, url: section.settings.button_link, style: 'ghost' %}
-        </div>
-      {%- endif -%}
+      <div style="margin-top: 1.5rem;">
+        {% render 'button-group', primary_label: section.settings.button_label, primary_url: section.settings.button_link, primary_style: 'ghost' %}
+      </div>
     </div>
   </div>
 </section>
