@@ -4,11 +4,7 @@
     <div class="featured-grid">
       {%- for block in section.blocks -%}
         <article class="card motion-item image-gallery__item">
-          {%- if block.settings.image != blank -%}
-            {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400, 800, 1200', alt: block.settings.title | escape }}
-          {%- else -%}
-            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          {%- endif -%}
+          {% render 'media-frame', image: block.settings.image, wrapper_class: '', image_width: 1200, widths: '400, 800, 1200', alt: block.settings.title, placeholder: 'image' %}
           <div class="image-gallery__caption">
             <strong>{{ block.settings.title }}</strong>
           </div>
