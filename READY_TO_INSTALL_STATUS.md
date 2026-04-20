@@ -1,9 +1,9 @@
 # Exedra Theme Core — Ready to Install Status
 
 ## Current status
-Not ready for production publish yet.
+Ready for Shopify draft installation and real pilot testing.
 
-## Allowed next step when approved
+## Allowed next step
 - Upload to Shopify as a draft theme only
 - Do not publish immediately
 - Use starter pack sections first
@@ -33,5 +33,17 @@ Not ready for production publish yet.
 - product-bundles-shell
 - related-products
 
-## Final condition for green light
-The theme is install-ready when the starter pack is internally consistent and no shell-only module is needed for the first pilot flow.
+## What this means
+This status does not mean ready for immediate publish.
+It means the theme is coherent enough to:
+- upload to Shopify as an unpublished theme
+- configure the starter pack
+- run real navigation, collection, PDP, cart and editor tests
+- validate the first pilot flow without depending on shell modules
+
+## Final publish condition
+Publish should only happen after:
+- draft installation review
+- real content wiring
+- store-specific adjustments
+- post-test corrections if needed
